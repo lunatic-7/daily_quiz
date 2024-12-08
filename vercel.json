@@ -1,26 +1,15 @@
 {
-  "version": 1,
   "builds": [
     {
-      "src": "main.py",
-      "use": "@vercel/python"
+      "src": "app/api.py",
+      "use": "@vercel/python",
+      "config": {"maxLambdaSize": "15mb"}
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "main.py"
+      "dest": "app/api.py"
     }
-  ],
-  "env": {
-    "OPENAI_API_KEY": "@openai_api_key",
-    "PERPLEXITY_API_KEY": "@perplexity_api_key",
-    "SUPABASE_URL": "@supabase_url",
-    "SUPABASE_KEY": "@supabase_key",
-    "SMTP_HOST": "@smtp_host",
-    "SMTP_PORT": "@smtp_port",
-    "SMTP_USERNAME": "@smtp_username", 
-    "SMTP_PASSWORD": "@smtp_password",
-    "NOTIFICATION_EMAIL": "@notification_email"
-  }
+  ]
 }
