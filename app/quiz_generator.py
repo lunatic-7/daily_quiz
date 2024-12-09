@@ -153,7 +153,11 @@ def generate_ai_news_quiz(content: str, num_questions: int, openai_api_key, supa
             Each question must include a brief context or background related to the news item.
             Ensure the question text references specific details from the news to make it engaging and informative.
 
-            Example Question:
+            Example News:
+            'title': 'Nobel laureates urge strong AI regulation'
+            'description': 'Physics Nobel Prize winner Geoffrey Hinton and chemistry laureate Demis Hassabis on Saturday insisted on a need for strong regulation of artificial intelligence, which played a key role in their awards. Hinton, who made headlines when he quit Google last year and warned of the dangers machines could one day outsmart people, was awarded his Nobel along with American John Hopfield for work on artificial neural networks.'
+
+            Example Question formatting according to News:
 
             Nobel laureates Geoffrey Hinton and Demis Hassabis have emphasized the need for strong regulation of artificial intelligence (AI). Geoffrey Hinton, who recently warned of AI potentially surpassing human intelligence, was awarded the Nobel Prize in Physics for his work on what key AI technology?
 
@@ -204,6 +208,7 @@ def generate_ai_news_quiz(content: str, num_questions: int, openai_api_key, supa
         # Print for debugging
         print(f"Quiz Result Type: {type(quiz_result)}")
         print(f"Questions Count: {len(quiz_result.questions)}")
+
 
         # Push to Supabase
         if quiz_result.questions:

@@ -21,8 +21,8 @@ from .quiz_generator import generate_news, generate_ai_news_quiz, QuizQuestion, 
 class Settings(BaseModel):
     OPENAI_API_KEY: str = os.getenv('OPENAI_API_KEY')
     PERPLEXITY_API_KEY: str = os.getenv('PERPLEXITY_API_KEY')
-    SUPABASE_URL: str = os.getenv('SUPABASE_URL')
-    SUPABASE_KEY: str = os.getenv('SUPABASE_KEY')
+    SUPABASE_URL: str = os.getenv('SUPABASE_URL_BF')
+    SUPABASE_KEY: str = os.getenv('SUPABASE_KEY_BF')
     SMTP_HOST: str = os.getenv('SMTP_HOST', 'smtp.gmail.com')
     SMTP_PORT: int = int(os.getenv('SMTP_PORT', 587))
     SMTP_USERNAME: str = os.getenv('SMTP_USERNAME')
@@ -75,7 +75,7 @@ async def generate_daily_quiz():
             print("News generated")
         generated_quiz = generate_ai_news_quiz(
             news_content, 
-            num_questions=10,
+            num_questions=20,
             openai_api_key=settings.OPENAI_API_KEY,
             supabase_url=settings.SUPABASE_URL,
             supabase_key=settings.SUPABASE_KEY
