@@ -11,5 +11,11 @@
       "src": "/(.*)",
       "dest": "app/api.py"
     }
+  ],
+  "crons": [
+    {
+      "path": "/generate-quiz",
+      "schedule": "0 1 * * *"
+    }
   ]
 }
