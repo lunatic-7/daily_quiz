@@ -153,13 +153,28 @@ def generate_ai_news_quiz(content: str, num_questions: int, openai_api_key, supa
             Each question must include a brief context or background related to the news item.
             Ensure the question text references specific details from the news to make it engaging and informative.
 
-            Example News:
-            'title': 'Nobel laureates urge strong AI regulation'
-            'description': 'Physics Nobel Prize winner Geoffrey Hinton and chemistry laureate Demis Hassabis on Saturday insisted on a need for strong regulation of artificial intelligence, which played a key role in their awards. Hinton, who made headlines when he quit Google last year and warned of the dangers machines could one day outsmart people, was awarded his Nobel along with American John Hopfield for work on artificial neural networks.'
+        Example 1:
+            Title: Nobel laureates urge strong AI regulation
+            Description: Physics Nobel Prize winner Geoffrey Hinton and chemistry laureate Demis Hassabis on Saturday insisted on a need for strong regulation of artificial intelligence, which played a key role in their awards. Hinton, who made headlines when he quit Google last year and warned of the dangers machines could one day outsmart people, was awarded his Nobel along with American John Hopfield for work on artificial neural networks.
 
-            Example Question formatting according to News:
+            Question:
+            Nobel laureates Geoffrey Hinton and Demis Hassabis emphasize strong AI regulation. Geoffrey Hinton, who warned about AI surpassing human intelligence, was awarded the Nobel Prize for his work on which AI-related technology?
+        
+        Example 2:
+            Title: Advanced AI chips cleared for export to UAE under Microsoft deal
+            Description: The US government has authorised the export of advanced artificial intelligence chips to a Microsoft-operated facility in the United Arab Emirates. This approval is part of Microsoft's closely scrutinized partnership with the Emirati AI company G42.
 
-            Nobel laureates Geoffrey Hinton and Demis Hassabis have emphasized the need for strong regulation of artificial intelligence (AI). Geoffrey Hinton, who recently warned of AI potentially surpassing human intelligence, was awarded the Nobel Prize in Physics for his work on what key AI technology?
+            Question:
+            The US has approved the export of advanced AI chips to a Microsoft-operated facility in the UAE. This deal is part of a collaboration with which Emirati AI company?
+
+        Example 3:
+            Title: Banks to use AI & machine learning to safeguard customers from financial frauds
+            Description: In a significant move to address the growing menace of digital financial frauds, the Department of Financial Services (DFS) has directed banks to adopt advanced technologies, including artificial intelligence (AI) and machine learning (ML), to safeguard customers from fraudsters.
+
+            Question:
+            The Department of Financial Services (DFS) recently instructed banks to use AI and machine learning technologies to combat which pressing issue in the financial sector?
+
+        --- This is the question forming methodoligy you need to follow
 
         2. Answer Options:
             Provide four distinct multiple-choice options, including only one correct answer.
